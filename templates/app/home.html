@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load humanize %}
+{% block content %}
+
+    <h1>Articles</h1>
+    <p>
+        You have created {{ user.article_count | intcomma }} 
+        article{{ user.article_count | pluralize }} 
+        and written {{ user.written_words | intcomma}} words.
+    </p>
+    <a href="{% url 'create_article' %}">Create</a>
+    
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li><a href="{% url 'update_article' article.id %}">{{ article.title }}</a> with {{article.word_count}} words.</li>
+            {% endfor %}
+        </ul> 
+    {% else %}
+    You have no articles yet.
+    {% endif %}
+        
+{% endblock content %}
+        
