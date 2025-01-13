@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+
+    "django_browser_reload",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +70,8 @@ MIDDLEWARE = [
 
     # Add the account middleware:
     "allauth.account.middleware.AccountMiddleware",
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 if DEBUG:
