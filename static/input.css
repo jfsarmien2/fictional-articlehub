@@ -22,3 +22,19 @@
 .subtitle {
     @apply text-4xl font-semibold tracking-tight;
 }
+
+.EasyMDEContainer, textarea {
+    @apply rounded-md border-gray-200 border-2 text-base leading-6;
+}
+
+.EasyMDEContainer .CodeMirror {
+  @apply !border-none !bg-inherit;
+}
+
+.EasyMDEContainer:has(textarea:focus), textarea:focus {
+    @apply ring-1 ring-emerald-500 border-emerald-500;
+}
+
+.form-field input {
+    @apply w-full rounded-md p-2;
+}
