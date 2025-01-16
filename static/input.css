@@ -39,7 +39,7 @@
     @apply w-full rounded-md p-2;
 }
 
-.error {
+.error, .destructive {
     @apply p-2 my-2 text-sm text-red-700 bg-red-50;
 }
 
