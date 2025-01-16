@@ -38,3 +38,11 @@
 .form-field input {
     @apply w-full rounded-md p-2;
 }
+
+.error {
+    @apply p-2 my-2 text-sm text-red-700 bg-red-50;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}

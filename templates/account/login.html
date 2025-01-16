@@ -15,10 +15,10 @@
                 
                 {% if form.errors %}
                     
-                    {% for  field, errors in for.errors.items %}
+                    {% for  field, errors in form.errors.items %}
                         
                         {% for error in errors %}
-                            <div>{{ error }}</div>
+                            <div class="error">{{ error }}</div>
                         {% endfor %}
                             
                     {% endfor %}
