@@ -5,13 +5,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Djangocourse</title>
+  <title>
+    Blog App
+  {% block head_title %}
+    
+  {% endblock head_title %}
+    </title>
   <link rel="stylesheet" href="{% static 'output.css' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
   <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+  
+  {% block extra_head %}
+    
+  {% endblock extra_head %}
+    
 </head>
 <body>
 
+{% block body %}
   {% url 'create_article' as create_new_url %}
   {% url 'home' as your_article_url %}
   {% url 'account_email' as change_email_url %}
@@ -43,13 +54,18 @@
         {% endif %}
     </div>
   </nav>
-  {% block content %}
-
-  {% endblock content %}
-  {% comment %} <footer>Common footer for all templates</footer> {% endcomment %}
+  <div class="p-2 md:p-4 lg:p-6">
+    {% block base_content %}
   
-  {% block page_js %}
+    {% endblock base_content %}
+  </div>
+  {% comment %} <footer>Common footer for all templates</footer> {% endcomment %}
+  {% endblock body %}
+
+  {% block extra_body %}
+  {% endblock extra_body %}
     
+  {% block page_js %}
   {% endblock page_js %}
     
 </body>

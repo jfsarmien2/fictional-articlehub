@@ -1,8 +1,8 @@
-{% extends 'app/base.html' %}
+{% extends 'base.html' %}
 
 {% load widget_tweaks %}
 
-{% block content %}
+{% block base_content %}
 <main class="max-w-7xl mx-auto mt-10">
 <form method="POST">
     {% csrf_token %}
@@ -32,7 +32,7 @@
 </form>
 
 </main>
-{% endblock content %}
+{% endblock base_content %}
 
 
 {% block page_js %}
