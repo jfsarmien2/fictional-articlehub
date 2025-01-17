@@ -32,6 +32,8 @@ venv.bak/
 # macOS
 .DS_Store
 
+.env.docker
+
 # Node modules
 node_modules/
 
