@@ -1,6 +1,7 @@
 #!/bin/bash
 
 poetry run python manage.py collectstatic --no-input
+
 poetry run python manage.py migrate
 
 if [[$ENV_STATE == "production"]]; then

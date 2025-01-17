@@ -54,8 +54,8 @@ coverage.xml
 .hypothesis/
 
 # Migrations
-**/migrations/*
-!**/migrations/__init__.py
+# **/migrations/*
+# !**/migrations/__init__.py
 
 # Docker
 *.log
