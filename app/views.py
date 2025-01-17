@@ -1,5 +1,6 @@
 
 from django.http import HttpResponse
+import time
 from app.models import Article
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -16,6 +17,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
     paginate_by = 5
 
     def get_queryset(self):
+        time.sleep(2)
         search = self.request.GET.get("search")
         queryset = super().get_queryset().filter(creator=self.request.user)
         if search:
