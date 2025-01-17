@@ -18,11 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.views.generic.base import RedirectView
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("articles/", include("app.urls")),
     path("accounts/", include("allauth.urls")),
     path("", RedirectView.as_view(pattern_name="home")),
-    path("__reload__/", include("django_browser_reload.urls")),
-] + debug_toolbar_urls()
+]
+
+if settings.DEBUG:
+    urlpatterns += [
+        path("__reload__/", include("django_browser_reload.urls")),
+    ] + debug_toolbar_urls()
